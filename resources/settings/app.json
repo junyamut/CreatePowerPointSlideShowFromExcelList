@@ -1,0 +1,25 @@
+{
+  "app": {
+    "dataSrcProps": {
+      "delimiter": ":", 
+      "fields": [
+        "CATEGORY", 
+        "GEO", 
+        "MONTH", 
+        "NAME", 
+        "TEAM"
+      ], 
+      "template": "MERGE.pptx", 
+      "workbook": "MERGE.xlsx"
+    },
+    "resourcesDir": "resources", 
+    "inputDir": "data", 
+    "name": "Batch PowerPoint Slides Creator", 
+    "outputDir": "presentation", 
+    "templateDir": "template"
+  }, 
+  "presentation": {
+    "name": "Batch Merge From List Result.pptx"
+  }
+}
+

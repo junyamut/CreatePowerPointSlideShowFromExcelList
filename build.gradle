@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'xyz.joseyamut.app.CreatePowerPointSlideShowFromExcelList'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile 'org.jsoup:jsoup:1.11.3'
+	compile 'org.apache.poi:poi:3.17'
+	compile 'org.apache.poi:poi-ooxml:3.17'
+	compile 'com.google.code.gson:gson:2.8.5'
+	compile 'org.apache.commons:commons-lang3:3.9'
+}

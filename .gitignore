@@ -1,0 +1,16 @@
+bin/*
+build/*
+gradle/*
+libs/*
+resources/data/*
+resources/presentation/*
+resources/template/*
+.gradle/*
+.settings/*
+gradlew
+gradlew.bat
+settings.gradle
+.classpath
+.project
+/.gradle/
+/build/
