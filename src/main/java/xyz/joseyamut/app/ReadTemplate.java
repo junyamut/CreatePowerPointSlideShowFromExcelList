@@ -38,21 +38,4 @@ public class ReadTemplate extends TemplateInputPath {
 	public XSLFSlide getMasterSlide() {
 		return masterSlide;
 	}
-	
-	public void replaceTextContent(String findText, String replaceWith) {
-		String findTextWithDelimiter = delimiter + findText + delimiter;
-		XSLFSlide slide = masterSlide;
-		CTSlide ctSlide = slide.getXmlObject();
-		XmlObject[] aText = ctSlide.selectPath("declare namespace a='http://schemas.openxmlformats.org/drawingml/2006/main' .//a:t");
-		for (int i = 0; i < aText.length; i++) {
-			if (aText[i] instanceof XmlString) {
-				XmlString xmlString = (XmlString) aText[i];
-				String text = xmlString.getStringValue();
-				if (text.contains(findTextWithDelimiter)) {						
-					xmlString.setStringValue(text.replaceAll(findTextWithDelimiter, replaceWith));
-				}
-			}
-		}
-		masterSlide = slide;
-	}
 }
