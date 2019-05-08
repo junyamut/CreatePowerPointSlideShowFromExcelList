@@ -1,19 +1,10 @@
 package xyz.joseyamut.app;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.apache.commons.lang3.StringUtils;
 
 public class CreatePowerPointSlideShowFromExcelList {	
-	public CreatePowerPointSlideShowFromExcelList() throws IOException {
+	public CreatePowerPointSlideShowFromExcelList() throws Exception {
+		ValidateFields.passed();
 		ReadWorkbook readWorkbook = new ReadWorkbook();
 		ReadTemplate readTemplate = new ReadTemplate();		
 		CreatePresentation presentation = new CreatePresentation(readTemplate.getTemplate());
@@ -28,6 +19,8 @@ public class CreatePowerPointSlideShowFromExcelList {
 		try {
 			new CreatePowerPointSlideShowFromExcelList();
 		} catch (IOException e) {
+			System.err.println(e.getMessage());
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 	}

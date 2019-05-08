@@ -3,19 +3,18 @@ package xyz.joseyamut.app;
 public class ValidateFields {
 
 	public ValidateFields() { }
-
-	private boolean equalNumberOfFields() {
-		return (new GetFieldsAsMap().getLength() == new GetHeadersAsMap().getLength());
+	
+	private static boolean equalSizeAndValuesInHashmaps() {
+		if (new GetFieldsAsMap().getLength() != new GetHeadersAsMap().getLength()) {
+			return false;
+		}		
+		return new GetFieldsAsMap().getMap().entrySet().stream()
+				.allMatch(e -> e.getValue().equals(new GetHeadersAsMap().getMap().get(e.getValue())));
 	}
 	
-	private boolean equalHashmaps() {
-		return (new GetFieldsAsMap().getMap().equals(new GetHeadersAsMap().getMap()));
-	}
-	
-	public boolean passed() {
-		if (equalNumberOfFields() && equalHashmaps()) {
-			return true;
+	public static void passed() throws Exception {
+		if (!equalSizeAndValuesInHashmaps()) {
+			throw new Exception("Declared fields are not equal. Make sure the sizes and values are equal. Must be of same case too.");
 		}
-		return false;
 	}
 }
