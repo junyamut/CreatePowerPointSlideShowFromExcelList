@@ -4,13 +4,13 @@
       "delimiter": ":", 
       "fields": [
         "CATEGORY", 
-        "GEO", 
-        "MONTH", 
-        "NAME", 
-        "TEAM"
+        "location", 
+        "DateTime", 
+        "TITLE", 
+        "Placeholder text"
       ], 
-      "template": "MERGE.pptx", 
-      "workbook": "MERGE.xlsx"
+      "template": "template.pptx", 
+      "workbook": "list.xlsx"
     },
     "resourcesDir": "resources", 
     "inputDir": "data", 
