@@ -6,6 +6,17 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 version = '1.0'
 
+task createJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Create a Powerpoint Slideshow from Excel list',  
+        	'Implementation-Version': version,
+        	'Main-Class': 'xyz.joseyamut.app.CreatePowerPointSlideShowFromExcelList'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 repositories {
     mavenCentral()
 }
